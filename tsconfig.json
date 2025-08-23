@@ -4,11 +4,13 @@
     "module": "CommonJS",
     "esModuleInterop": true,
     "strict": true,
-    "outDir": "./dist",
-    "rootDir": "./",
+    "outDir": "dist",
+    "rootDir": "./src",
     "skipLibCheck": true,
     "sourceMap": true,
     "declaration": true,
     "declarationMap": true
-  }
+  },
+  "include": ["src", "dist"],
+  "exclude": ["node_modules", "dist"]
 }
