@@ -14,7 +14,16 @@ router.post("/", async (req, res, next) => {
         .json({ success: false, message: "Campos incompletos o inválidos" });
     }
 
-    const rsvp = new RSVPModel({ name, phone, attending, guests });
+    // 👇 Aseguramos que guests siempre tenga un valor válido
+    const guestsCount = attending ? guests ?? 0 : 0;
+
+    const rsvp = new RSVPModel({
+      name,
+      phone,
+      attending,
+      guests: guestsCount,
+    });
+
     await rsvp.save();
 
     res.status(201).json({
@@ -22,17 +31,6 @@ router.post("/", async (req, res, next) => {
       message: "✅ Confirmación guardada con éxito",
       rsvp,
     });
-  } catch (error) {
-    next(error);
-  }
-});
-
-
-// Listar RSVPs
-router.get("/", async (req, res, next) => {
-  try {
-    const list = await RSVPModel.find();
-    res.json(list);
   } catch (error) {
     next(error);
   }
