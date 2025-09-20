@@ -4,19 +4,10 @@ import { InvitadoModel } from "../models/Invitado";
 
 dotenv.config();
 
-// Lista de invitados de ejemplo (puedes reemplazar esto con tu lista del Excel)
+// Lista de invitados de ejemplo
 const invitados = [
-  { name: "Valentina", phone: "3001234567", maxGuests: 1 },
-  { name: "Yeison", phone: "3007654321", maxGuests: 2 },
-  { name: "María García", phone: "3001111111", maxGuests: 2 },
-  { name: "Juan Pérez", phone: "3002222222", maxGuests: 1 },
-  { name: "Ana López", phone: "3003333333", maxGuests: 2 },
-  { name: "Carlos Rodríguez", phone: "3004444444", maxGuests: 1 },
-  { name: "Laura Martínez", phone: "3005555555", maxGuests: 2 },
-  { name: "Roberto Silva", phone: "3006666666", maxGuests: 1 },
-  { name: "Carmen Vega", phone: "3007777777", maxGuests: 2 },
-  { name: "Miguel Torres", phone: "3008888888", maxGuests: 1 }
-];
+  { name: "Juan Pérez", phone: "1234567890", maxGuests: 2 },
+]
 
 async function loadInvitados() {
   try {
